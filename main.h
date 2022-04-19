@@ -4,4 +4,18 @@
 #include <stdarg.h>
 
 int _putchar(char c);
+int print_char(va_list arg);
+int print_str(va_list arg);
+int _printf(const char *format, ...);
+/**
+ * struct pickerStruct- picks structure to printout
+ * @formt: type
+ * @printer: printing function
+ */
+typedef struct pickerStruct
+{
+    char *formt;
+    int (*printer)(va_list);
+} pickerStruct;
+
 #endif
