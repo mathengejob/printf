@@ -7,15 +7,17 @@ int _putchar(char c);
 int print_char(va_list arg);
 int print_str(va_list arg);
 int _printf(const char *format, ...);
+
 /**
- * struct pickerStruct- picks structure to printout
- * @formt: type
+ * struct identifierStruct- picks structure to printout
+ * @indentifier: type
  * @printer: printing function
  */
+
 typedef struct identifierStruct
 {
-    char *indentifier;
-    int (*printer)(va_list);
+char *indentifier;
+int (*printer)(va_list);
 } identifierStruct;
 
 #endif
