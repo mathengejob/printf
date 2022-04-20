@@ -1,77 +1,92 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
- * formatPickers - prints special characters
- * @after: char follwing "%"
- * @arg: argument for identifier
- * Return:the number of characters printed, no null bytes
+ * printIdentifiers - prints special characters
+ * @next: character after the %
+ * @arg: argument for the indentifier
+ * Return: the number of characters printed
+ * (excluding the null byte used to end output to strings)
  */
 
-int formatPickers(char after, va_list arg)
+int printIdentifiers(char next, va_list arg)
 {
-    int formtsIndex;
+	int functsIndex;
 
-    pickerStruct formts[] ={
-        {"c", print_char},
-        {"s", print_str},
-        {NULL,NULL}
+	identifierStruct functs[] = {
+		{"c", print_char},
+		{"s", print_str},
+	/*	{"d", print_int},
+		{"i", print_int},
+		{"u", print_unsigned},
+		{"b", print_unsignedToBinary},
+		{"o", print_oct},
+		{"x", print_hex},
+		{"X", print_HEX},
+		{"S", print_STR},*/
+		{NULL, NULL}
+	};
 
-    };
-    for (formtsIndex=0;formts[formtsIndex].formt != NULL;formtsIndex++)
-    {
-        if (formts[formtsIndex].formt[0]== after)
-        return (formts[formtsIndex].printer(arg));
-    }
-    return (0);
+	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
+	{
+		if (functs[functsIndex].indentifier[0] == next)
+			return (functs[functsIndex].printer(arg));
+	}
+	return (0);
 }
+
 /**
- * _print - reprica of stdio printf
- * Description: outputs in a specified format
- * writes output to stdout, the standard output stream
- * @format: a character string. 
- * is composed of zero or more directives.
- * return: number of characters printed, no null bytes.
- * return -1 for incomplete picker errors
+ * _printf - mimic printf from stdio
+ * Description: produces output according to a format
+ * write output to stdout, the standard output stream
+ * @format: character string composed of zero or more directives
+ *
+ * Return: the number of characters printed
+ * (excluding the null byte used to end output to strings)
+ * return -1 for incomplete identifier error
  */
+
 int _printf(const char *format, ...)
 {
-    unsigned int i;
-    int formterPrinted = 0, charPrinted = 0;
-    va_list arg;
+	unsigned int i;
+	int identifierPrinted = 0, charPrinted = 0;
+	va_list arg;
 
-    va_start(arg, format);
-    if(format ==NULL)
-    return (-1);
+	va_start(arg, format);
+	if (format == NULL)
+		return (-1);
 
-    for (i=0; format[i] != '\0'; i++)
-    {
-        if (format[i] != '%')
-        {
-            _putchar(format[i]);
-            charPrinted++;
-        }
-        if (format[i+1] == '%')
-        {
-            _putchar('%');
-            charPrinted++;
-            i++;
-            continue;
-        }
-        if (format[i+1] == '\0')
-        return(-1);
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			charPrinted++;
+			continue;
+		}
+		if (format[i + 1] == '%')
+		{
+			_putchar('%');
+			charPrinted++;
+			i++;
+			continue;
+		}
+		if (format[i + 1] == '\0')
+			return (-1);
 
-        formterPrinted=formatPickers(format[i+1],arg);
-        if(formterPrinted == -1 || formterPrinted != 0 )
-        i++;
-        if(formterPrinted > 0)
-        charPrinted += formterPrinted;
-        if (formterPrinted == 0)
-        {
-            _putchar('%');
-            charPrinted++;
-        }
-    }
-    va_end(arg);
-    return (charPrinted);
+		identifierPrinted = printIdentifiers(format[i + 1], arg);
+		if (identifierPrinted == -1 || identifierPrinted != 0)
+			i++;
+		if (identifierPrinted > 0)
+			charPrinted += identifierPrinted;
+
+		if (identifierPrinted == 0)
+		{
+			_putchar('%');
+			charPrinted++;
+		}
+	}
+	va_end(arg);
+	return (charPrinted);
 }

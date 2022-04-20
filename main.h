@@ -12,10 +12,10 @@ int _printf(const char *format, ...);
  * @formt: type
  * @printer: printing function
  */
-typedef struct pickerStruct
+typedef struct identifierStruct
 {
-    char *formt;
+    char *indentifier;
     int (*printer)(va_list);
-} pickerStruct;
+} identifierStruct;
 
 #endif
