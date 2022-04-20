@@ -64,4 +64,3 @@ for (; divisor >= 1; n %= divisor, divisor /= 10, charPrinted++)
 return (charPrinted);
 }
 
-
