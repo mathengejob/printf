@@ -9,7 +9,7 @@ int print_str(va_list arg);
 int _printf(const char *format, ...);
 int print_int(va_list arg);
 int print_unsignedToBinary(va_list arg);
-
+int print_unsigned_int(va_list arg);
 /**
  * struct identifierStruct- picks structure to printout
  * @indentifier: type

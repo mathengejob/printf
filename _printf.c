@@ -20,6 +20,7 @@ int printIdentifiers(char next, va_list arg)
                 {"d", print_int},
                 {"i", print_int},
                 {"b", print_unsignedToBinary},
+		{"u", print_unsigned_int},
 		{NULL, NULL}
 	};
 
