@@ -47,3 +47,4 @@ int print_unsignedIntToHex(unsigned int num, char _case)
 	free(numhex);
 	return (nbrCharacters);
 }
+
