@@ -49,7 +49,8 @@ int n = va_arg(arg, int);
 if (n < 0)
 {
 	_putchar('-');
-	charPrinted++;
+	ui#
+		charPrinted++;
 	n *= -1;
 }
 
@@ -63,7 +64,7 @@ for (; divisor >= 1; n %= divisor, divisor /= 10, charPrinted++)
 }
 return (charPrinted);
 }
-/**
+**
  * print_unsigned_int - Printing unsigned interger 
  * arg - argument
  * return: 0
