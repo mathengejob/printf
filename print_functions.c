@@ -85,7 +85,7 @@ return (printed);
  * arg - argument
  * return: 0
  * */
-int print_unsigned_int(va_list arg)
+/*int print_unsigned_int(va_list arg)
 {
 
-}	
+}	*/

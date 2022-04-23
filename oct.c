@@ -7,7 +7,8 @@
  * @ibuf: index for buffer pointer
  * Return: number of chars printed.
  */
-int print_oct(va_list arguments, char *buf, unsigned int ibuf)
+/*
+ * int print_oct(va_list arguments, char *buf, unsigned int ibuf)
 {
 	int int_input, i, isnegative, count, first_digit;
 	char *octal, *binary;
@@ -41,4 +42,5 @@ int print_oct(va_list arguments, char *buf, unsigned int ibuf)
 	free(binary);
 	free(octal);
 	return (count);
-}
+}*/
+

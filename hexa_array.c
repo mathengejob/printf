@@ -10,6 +10,7 @@
  * @limit: size of hex
  * Return: binary array.
  */
+/*
 char *fill_hex_array(char *bnr, char *hex, int isupp, int limit)
 {
 	int op, i, j, toletter;
@@ -31,3 +32,4 @@ char *fill_hex_array(char *bnr, char *hex, int isupp, int limit)
 	}
 	return (hex);
 }
+*/
