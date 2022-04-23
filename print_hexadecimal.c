@@ -24,7 +24,7 @@ int print_hex_base(va_list arg, char _case)
  */
 int print_hex(va_list arg)
 {
-return(print_hex_base(arg,'a'));
+return (print_hex_base(arg, 'a'));
 }
 /**
  * print_HEX - prints upper case hexadecimal
