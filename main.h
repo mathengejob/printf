@@ -25,6 +25,6 @@ typedef struct identifierStruct
 {
 char *indentifier;
 int (*printer)(va_list);
-} identifierStruct;
+
 
 #endif
