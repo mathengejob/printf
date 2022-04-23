@@ -65,10 +65,10 @@ return (charPrinted);
 }
 
 /**
- * print_unsigned_int - Printing unsigned interger 
- * arg - argument
+ * print_unsigned - Printing unsigned interger
+ *@arg - argument
  * return: 0
- * */
+ */
 int print_unsigned(va_list arg)
 {
 int divisor = 1, i, resp;
