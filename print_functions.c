@@ -49,7 +49,8 @@ int n = va_arg(arg, int);
 if (n < 0)
 {
 	_putchar('-');
-	charPrinted++;
+	ui#
+		charPrinted++;
 	n *= -1;
 }
 
@@ -63,29 +64,12 @@ for (; divisor >= 1; n %= divisor, divisor /= 10, charPrinted++)
 }
 return (charPrinted);
 }
-
-/**
- * print_unsignedToBinary - prints an integer.
- * @arg: argument
- * Return: 0
- */
-int print_unsignedToBinary(va_list arg)
-{
-
-unsigned int n = va_arg(arg, unsigned int);
-unsigned int printed;
-
-print_binary(n, &printed);
-print_binary(n, &printed);
-
-return (printed);
-}
-/**
+**
  * print_unsigned_int - Printing unsigned interger 
  * arg - argument
  * return: 0
  * */
-int print_unsigned_int(va_list arg)
+/*int print_unsigned_int(va_list arg)
 {
 
-}	
+}	*/
