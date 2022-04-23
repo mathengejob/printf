@@ -24,7 +24,6 @@ int printIdentifiers(char next, va_list arg)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"o", print_oct},
-		{"S", print_STR},
 		{NULL, NULL}
 	};
 
